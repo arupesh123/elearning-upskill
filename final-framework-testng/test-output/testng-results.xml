@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="21203" started-at="2019-02-18T05:15:06Z" finished-at="2019-02-18T05:15:27Z">
+  <suite name="Default suite" duration-ms="20591" started-at="2019-02-24T13:50:56Z" finished-at="2019-02-24T13:51:16Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="21203" started-at="2019-02-18T05:15:06Z" finished-at="2019-02-18T05:15:27Z">
+    <test name="Default test" duration-ms="20591" started-at="2019-02-24T13:50:56Z" finished-at="2019-02-24T13:51:16Z">
       <class name="com.training.sanity.tests.StudentLoginELTC_002_Test">
-        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.StudentLoginELTC_002_Test@1593948d]" name="setUpBeforeClass" is-config="true" duration-ms="13433" started-at="2019-02-18T10:45:06Z" finished-at="2019-02-18T10:45:20Z">
+        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.StudentLoginELTC_002_Test@1593948d]" name="setUpBeforeClass" is-config="true" duration-ms="12191" started-at="2019-02-24T19:20:56Z" finished-at="2019-02-24T19:21:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeClass -->
-        <test-method status="PASS" signature="validLoginTest()[pri:0, instance:com.training.sanity.tests.StudentLoginELTC_002_Test@1593948d]" name="validLoginTest" duration-ms="5650" started-at="2019-02-18T10:45:20Z" finished-at="2019-02-18T10:45:25Z">
+        <test-method status="PASS" signature="validLoginTest()[pri:0, instance:com.training.sanity.tests.StudentLoginELTC_002_Test@1593948d]" name="validLoginTest" duration-ms="6441" started-at="2019-02-24T19:21:08Z" finished-at="2019-02-24T19:21:14Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validLoginTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.sanity.tests.StudentLoginELTC_002_Test@1593948d]" name="tearDown" is-config="true" duration-ms="2084" started-at="2019-02-18T10:45:25Z" finished-at="2019-02-18T10:45:27Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.sanity.tests.StudentLoginELTC_002_Test@1593948d]" name="tearDown" is-config="true" duration-ms="1887" started-at="2019-02-24T19:21:14Z" finished-at="2019-02-24T19:21:16Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

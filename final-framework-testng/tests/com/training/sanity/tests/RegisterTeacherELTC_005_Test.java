@@ -63,7 +63,7 @@ public class RegisterTeacherELTC_005_Test {
 		Thread.sleep(1000);
 		RegisterTeacherELTC_005.sendEmail("dollymuk06@gmail.com");
 		Thread.sleep(1000);
-		RegisterTeacherELTC_005.senduserName("sourik54");
+		RegisterTeacherELTC_005.senduserName("sourik55");
 		Thread.sleep(1000);
 		RegisterTeacherELTC_005.sendPassword("Systane@12");
 		Thread.sleep(1000);
