@@ -11,12 +11,16 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
+import com.training.generics.ScreenShot_ELTC_001;
 
 public class TeacherAssignmentsELTC_034 {
 	private static final String DropdownCategory = null;
 
 	private WebDriver driver;
 	private String name;
+	private ScreenShot_ELTC_001 screenShot;
+
 	
 	public TeacherAssignmentsELTC_034(WebDriver driver) {
 		this.driver = driver;
@@ -99,7 +103,7 @@ public class TeacherAssignmentsELTC_034 {
 		this.AddFrameDescText.sendKeys(AddFrameDescText);
 	}
 
-	// to come out of frame
+
 	public void FrameDesce2out() {
 
 		driver.switchTo().defaultContent();
@@ -116,6 +120,15 @@ public class TeacherAssignmentsELTC_034 {
 
 	public void Validate1() {
 		Validate.click();
+	}
+	
+	public void assertiontext() {
+		String Expected1 = "Directory created";
+		String Actualtext1 = driver.findElement(By.xpath("//*[@id=\"content-section\"]/div/div[2]")).getText();
+		Assert.assertEquals(Actualtext1, Expected1);
+		System.out.println(Actualtext1);
+		//screenShot.captureScreenShot("ELTC_032_Saved");
+		
 	}
 
 	public void checkBox1() {
@@ -139,5 +152,13 @@ public class TeacherAssignmentsELTC_034 {
 	public void Save1() {
 		Save.click();
 	}
+		
+	public void assertiontext1() {
+		String Expected2 = "Saved.";
+		String Actualtext2 = driver.findElement(By.xpath("//*[@id=\"content-section\"]/div/div[2]")).getText();
+		Assert.assertEquals(Actualtext2, Expected2);
+		System.out.println(Actualtext2);
+		
+		}
 
 }

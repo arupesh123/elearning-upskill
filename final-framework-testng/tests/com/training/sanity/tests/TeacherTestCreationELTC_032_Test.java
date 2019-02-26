@@ -57,9 +57,9 @@ public class TeacherTestCreationELTC_032_Test {
 	public void validLoginTest() throws InterruptedException {
 
 		StudentLoginELTC_002.sendUserName("sourik54");
-		// Thread.sleep(1000);
+		Thread.sleep(1000);
 		StudentLoginELTC_002.sendPassword("Systane@12");
-		// Thread.sleep(1000);
+		Thread.sleep(1000);
 		StudentLoginELTC_002.clickLoginBtn();
 
 	}
@@ -74,41 +74,33 @@ public class TeacherTestCreationELTC_032_Test {
 		Thread.sleep(1000);
 		coursercreation.clickCreateaNewTest();
 		Thread.sleep(1000);
-		coursercreation.sendTestName("Online Quiz2");
-		// Thread.sleep(1000);
+		coursercreation.sendTestName("Online Quiz3");
+		Thread.sleep(1000);
 		coursercreation.clickAdvSetting();
-		// Thread.sleep(1000);
+		Thread.sleep(1000);
 		coursercreation.Frame();
-		// Thread.sleep(1000);
-		coursercreation.sendTestNameDesc("Quiz2");
-		// Thread.sleep(1000);
+		Thread.sleep(1000);
+		coursercreation.sendTestNameDesc("Quiz3");
+		Thread.sleep(1000);
 		coursercreation.Frame2();
-		// Thread.sleep(1000);
+		Thread.sleep(1000);
 		coursercreation.clickCheckBox();
-		// Thread.sleep(1000);
+		Thread.sleep(1000);
 		coursercreation.clickDateImage();
-		// Thread.sleep(1000);
+		Thread.sleep(1000);
 		coursercreation.clickNow();
-		// Thread.sleep(1000);
+		Thread.sleep(1000);
 		coursercreation.clickDone();
-		// Thread.sleep(1000);
+		Thread.sleep(1000);
 		coursercreation.clickPassPercent("100");
-		// Thread.sleep(1000);
+		Thread.sleep(1000);
 		coursercreation.btnsubmitExercise();
-		// Thread.sleep(1000);
-
-		String Expected361 = "Exercise added";
-		String Actualtext361 = driver.findElement(By.xpath("//*[@id=\"content-section\"]/div/div[2]")).getText();
-		Assert.assertEquals(Actualtext361, Expected361);
-		System.out.println(Actualtext361);
+		Thread.sleep(1000);
+		coursercreation.ClickAssetion361();
 		
 		screenShot.captureScreenShot("ELTC_032_Excercise Added");
-
-		String Expected362 = "0 questions, for a total score (all questions) of 0.";
-		String Actualtext362 = driver.findElement(By.xpath("//*[@id=\"content-section\"]/div/div[4]"))
-				.getText();
-		Assert.assertEquals(Actualtext362, Expected362);
-		System.out.println(Actualtext362);
+		
+		coursercreation.ClickAssetion362();
 
 		screenShot.captureScreenShot("ELTC_032_0 Questions");
 		
@@ -151,11 +143,8 @@ public class TeacherTestCreationELTC_032_Test {
 		Thread.sleep(1000);
 		coursercreation.btnsubQuestion();
 		Thread.sleep(1000);
-
-		String Expected44 = "1 questions, for a total score (all questions) of 1.";
-		String Actualtext44 = driver.findElement(By.xpath("//*[@id=\"content-section\"]/div/div[4]")).getText();
-		Assert.assertEquals(Actualtext44, Expected44);
-		System.out.println(Actualtext44);
+		coursercreation.ClickAssertion44();
+		
 		
 		screenShot.captureScreenShot("ELTC_032_1 Questions");
 		
@@ -201,10 +190,8 @@ public class TeacherTestCreationELTC_032_Test {
 		coursercreation.clickSub_Ques1();
 		Thread.sleep(1000);
 		
-		String Expected54= "2 questions, for a total score (all questions) of 2.";
-		String Actualtext54 = driver.findElement(By.xpath("//*[@id=\"content-section\"]/div/div[4]")).getText();
-		Assert.assertEquals(Actualtext54, Expected54);
-		System.out.println(Actualtext54);
+		coursercreation.ClickAssertion54();
+		Thread.sleep(1000);
 		
 		screenShot.captureScreenShot("ELTC_032_2 Questions");
 		
@@ -220,22 +207,9 @@ public class TeacherTestCreationELTC_032_Test {
 		Thread.sleep(1000);
 		coursercreation.clickEndTest();
 		Thread.sleep(1000);
-		
-		
-		
-		String Expected58= "Score for the test: 2 / 2";
-		String Actualtext58 = driver.findElement(By.xpath("//*[@id=\"content-section\"]/div/div[5]/div/div/h3")).getText();
-		Assert.assertEquals(Actualtext58, Expected58);
-		System.out.println(Actualtext58);
-		
+		coursercreation.ClickAssertion58();
+			
 		screenShot.captureScreenShot("ELTC_032_Score for test");
-		
-		
-		
-		
-		
-		
-		
 		
 		
 		

@@ -55,10 +55,12 @@ public class TeacherAddCourseELTC_031_Test {
 
 	@Test(priority = 1)
 	public void validLoginTest() throws InterruptedException {
-
+        
+		
+		
 		StudentLoginELTC_002.sendUserName("sourik54");
 	    Thread.sleep(1000);
-		StudentLoginELTC_002.sendPassword("Systane@12");
+	  	StudentLoginELTC_002.sendPassword("Systane@12");
 		Thread.sleep(1000);
 		StudentLoginELTC_002.clickLoginBtn();
 
@@ -67,10 +69,11 @@ public class TeacherAddCourseELTC_031_Test {
 	@Test(priority = 2)
 
 	public void validCoursecreation() throws InterruptedException {
-
+         
+		
 		coursercreation.clickCourse();
 		Thread.sleep(1000);
-		coursercreation.sendCourseName("Java1");
+		coursercreation.sendCourseName("Kolkata11");
 		Thread.sleep(1000);
 		coursercreation.clickAdvSetting();
 		Thread.sleep(1000);
@@ -78,7 +81,7 @@ public class TeacherAddCourseELTC_031_Test {
 		Thread.sleep(1000);
 		coursercreation.category2();
 		Thread.sleep(1000);
-		coursercreation.sendCourseCode("Test57");
+		coursercreation.sendCourseCode("Test11");
 		Thread.sleep(1000);
 		coursercreation.AddCourseSubmit();
 		Thread.sleep(1000);
@@ -92,9 +95,14 @@ public class TeacherAddCourseELTC_031_Test {
 		Thread.sleep(1000);
 		coursercreation.clickSaveToText();
 
-		screenShot.captureScreenShot("ELTC_031_Create Course");
+		//screenShot.captureScreenShot("ELTC_031_Create Course");
+		
+		coursercreation.clickAssertion121();
+		
+		screenShot.captureScreenShot("ELTC_031_Intro was updated");
+		screenShot.captureScreenShot("ELTC_031_This is Selenium");
 
-		String Expected121 = "Intro was updated";
+		/*String Expected121 = "Intro was updated";
 		String Actualtext121 = driver.findElement(By.xpath("//div[contains(text(),'Intro was updated')]")).getText();
 		Assert.assertEquals(Actualtext121, Expected121);
 		System.out.println(Actualtext121);
@@ -102,7 +110,7 @@ public class TeacherAddCourseELTC_031_Test {
 		String Expected122 = "This is Selenium";
 		String Actualtext122 = driver.findElement(By.xpath("//p[contains(text(),'This is Selenium')]")).getText();
 		Assert.assertEquals(Actualtext122, Expected122);
-		System.out.println(Actualtext122);
+		System.out.println(Actualtext122);*/
 
 		coursercreation.courseDescrpIcon();
 		Thread.sleep(1000);
@@ -116,16 +124,17 @@ public class TeacherAddCourseELTC_031_Test {
 		Thread.sleep(1000);
 		coursercreation.FramedefDescp();
 		Thread.sleep(1000);
-		coursercreation.ClickSave();
+		coursercreation.ClickSave();		
+		coursercreation.clickAssertion17();
 
 		screenShot.captureScreenShot("ELTC_031_Description");
 
-		String Expected17 = "The description has been updated";
+		/*String Expected17 = "The description has been updated";
 		String Actualtext17 = driver.findElement(By.xpath("//*[@id=\"content-section\"]/div/div[2]")).getText();
 		Assert.assertEquals(Actualtext17, Expected17);
-		System.out.println(Actualtext17);
+		System.out.println(Actualtext17);*/
 
-		//Object
+		
 		coursercreation.ObjIcon();
 		Thread.sleep(1000);
 		coursercreation.ObjDescpTitle("This is Objective Title ");
@@ -137,15 +146,17 @@ public class TeacherAddCourseELTC_031_Test {
 		coursercreation.FramedefObj();
 		Thread.sleep(1000);
 		coursercreation.ClickSaveObj();
+		coursercreation.clickAssertion21();		
+		
 
-		screenShot.captureScreenShot("ELTC_031_Objectives");
-
+		screenShot.captureScreenShot("ELTC_031_Objectives_Description");
+/*
 		String Expected21 = "The description has been updated";
 		String Actualtext21 = driver.findElement(By.xpath("//*[@id=\"content-section\"]/div/div[2]")).getText();
 		Assert.assertEquals(Actualtext21, Expected21);
-		System.out.println(Actualtext21);
+		System.out.println(Actualtext21);*/
 
-		// Topics
+		
 		coursercreation.TopicsIcon();
 		Thread.sleep(1000);
 		coursercreation.TopDescpTitle("This is Topics Title ");
@@ -156,14 +167,15 @@ public class TeacherAddCourseELTC_031_Test {
 		Thread.sleep(1000);
 		coursercreation.FramedefTop();
 		Thread.sleep(1000);
-		coursercreation.ClickSaveTop();
+		coursercreation.ClickSaveTop();		
+		coursercreation.clickAssertion25();
 
-		String Expected25 = "The description has been updated";
+		/*String Expected25 = "The description has been updated";
 		String Actualtext25 = driver.findElement(By.xpath("//*[@id=\"content-section\"]/div/div[2]")).getText();
 		Assert.assertEquals(Actualtext25, Expected25);
 		System.out.println(Actualtext25);
-
-		screenShot.captureScreenShot("ELTC_031_Topics");
+*/
+		screenShot.captureScreenShot("ELTC_031_Topics_Description");
 
 	}
 

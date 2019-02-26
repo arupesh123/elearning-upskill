@@ -1,25 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="20591" started-at="2019-02-24T13:50:56Z" finished-at="2019-02-24T13:51:16Z">
+  <suite name="Default suite" duration-ms="43021" started-at="2019-02-26T15:37:27Z" finished-at="2019-02-26T15:38:10Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="20591" started-at="2019-02-24T13:50:56Z" finished-at="2019-02-24T13:51:16Z">
-      <class name="com.training.sanity.tests.StudentLoginELTC_002_Test">
-        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.StudentLoginELTC_002_Test@1593948d]" name="setUpBeforeClass" is-config="true" duration-ms="12191" started-at="2019-02-24T19:20:56Z" finished-at="2019-02-24T19:21:08Z">
+    <test name="Default test" duration-ms="43021" started-at="2019-02-26T15:37:27Z" finished-at="2019-02-26T15:38:10Z">
+      <class name="com.training.sanity.tests.TeacherAssignStudentRateELTC_035_Test">
+        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.TeacherAssignStudentRateELTC_035_Test@1593948d]" name="setUpBeforeClass" is-config="true" duration-ms="9782" started-at="2019-02-26T21:07:27Z" finished-at="2019-02-26T21:07:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeClass -->
-        <test-method status="PASS" signature="validLoginTest()[pri:0, instance:com.training.sanity.tests.StudentLoginELTC_002_Test@1593948d]" name="validLoginTest" duration-ms="6441" started-at="2019-02-24T19:21:08Z" finished-at="2019-02-24T19:21:14Z">
+        <test-method status="PASS" signature="validLoginTest()[pri:1, instance:com.training.sanity.tests.TeacherAssignStudentRateELTC_035_Test@1593948d]" name="validLoginTest" duration-ms="5093" started-at="2019-02-26T21:07:37Z" finished-at="2019-02-26T21:07:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validLoginTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.sanity.tests.StudentLoginELTC_002_Test@1593948d]" name="tearDown" is-config="true" duration-ms="1887" started-at="2019-02-24T19:21:14Z" finished-at="2019-02-24T19:21:16Z">
+        <test-method status="PASS" signature="validCoursecreation()[pri:2, instance:com.training.sanity.tests.TeacherAssignStudentRateELTC_035_Test@1593948d]" name="validCoursecreation" duration-ms="26040" started-at="2019-02-26T21:07:42Z" finished-at="2019-02-26T21:08:08Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validCoursecreation -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.sanity.tests.TeacherAssignStudentRateELTC_035_Test@1593948d]" name="tearDown" is-config="true" duration-ms="2088" started-at="2019-02-26T21:08:08Z" finished-at="2019-02-26T21:08:10Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.training.sanity.tests.StudentLoginELTC_002_Test -->
+      </class> <!-- com.training.sanity.tests.TeacherAssignStudentRateELTC_035_Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

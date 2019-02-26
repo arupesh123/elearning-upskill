@@ -44,23 +44,23 @@ public class TeacherAssignmentsLTC_034_Test {
 		assigncreation = new TeacherAssignmentsELTC_034(driver);
 		baseUrl = properties.getProperty("baseURL");
 		screenShot = new ScreenShot_ELTC_001(driver);
-		// open the browser
-		driver.get(baseUrl);
+    	driver.get(baseUrl);
 		
 	}
 
-	/*
-	 * @AfterClass public void tearDown() throws Exception { Thread.sleep(1000);
-	 * driver.quit(); }
-	 */
+	
+	  @AfterClass 
+	  public void tearDown() throws Exception { Thread.sleep(1000);
+	  driver.quit(); }
+	 
 
 	@Test(priority = 1)
 	public void validLoginTest() throws InterruptedException {
 
 		StudentLoginELTC_002.sendUserName("sourik54");
-		// Thread.sleep(1000);
+		Thread.sleep(1000);
 		StudentLoginELTC_002.sendPassword("Systane@12");
-		// Thread.sleep(1000);
+		Thread.sleep(1000);
 		StudentLoginELTC_002.clickLoginBtn();
 
 	}
@@ -75,7 +75,7 @@ public class TeacherAssignmentsLTC_034_Test {
 		Thread.sleep(1000);
 		assigncreation.clickCreateAssignment1();
 		Thread.sleep(1000);
-		assigncreation.sendAssignNameText("IBM6");
+		assigncreation.sendAssignNameText("IBM11");
 		Thread.sleep(1000);
 		assigncreation.FrameDesc();
 		Thread.sleep(1000);
@@ -89,14 +89,9 @@ public class TeacherAssignmentsLTC_034_Test {
 		Thread.sleep(1000);
 		assigncreation.Validate1();
 		Thread.sleep(1000);
+		assigncreation.assertiontext();
 		
-		String Expected1 = "Directory created";
-		String Actualtext1 = driver.findElement(By.xpath("//*[@id=\"content-section\"]/div/div[2]")).getText();
-		Assert.assertEquals(Actualtext1, Expected1);
-		System.out.println(Actualtext1);
-		
-		screenShot.captureScreenShot("ELTC_032_Directory Created");
-
+		screenShot.captureScreenShot("ELTC_034_Directory Created1");
 		
 		assigncreation.checkBox1();
 		Thread.sleep(1000);
@@ -106,15 +101,9 @@ public class TeacherAssignmentsLTC_034_Test {
 		Thread.sleep(1000);
 		assigncreation.Save1();
 		Thread.sleep(1000);
+		assigncreation.assertiontext1();
 		
-		
-		String Expected2 = "Saved.";
-		String Actualtext2 = driver.findElement(By.xpath("//*[@id=\"content-section\"]/div/div[2]")).getText();
-		Assert.assertEquals(Actualtext2, Expected2);
-		System.out.println(Actualtext2);
-			
-
-		screenShot.captureScreenShot("ELTC_032_Saved");
+		screenShot.captureScreenShot("ELTC_034_Saved1");
 
 	}
 }

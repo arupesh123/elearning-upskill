@@ -45,7 +45,6 @@ public class TeacherAssignStudentRateELTC_035_Test {
 		studentandrate = new TeacherAssignStudentRateELTC_035(driver);
 		baseUrl = properties.getProperty("baseURL");
 		screenShot = new ScreenShot_ELTC_001(driver);
-		// open the browser
 		driver.get(baseUrl);
 
 	}
@@ -60,9 +59,9 @@ public class TeacherAssignStudentRateELTC_035_Test {
 	public void validLoginTest() throws InterruptedException {
 
 		StudentLoginELTC_002.sendUserName("sourik54");
-		// Thread.sleep(1000);
+		Thread.sleep(1000);
 		StudentLoginELTC_002.sendPassword("Systane@12");
-		// Thread.sleep(1000);
+		Thread.sleep(1000);
 		StudentLoginELTC_002.clickLoginBtn();
 
 	}
@@ -78,11 +77,6 @@ public class TeacherAssignStudentRateELTC_035_Test {
 		studentandrate.clickAssignSub1();
 		Thread.sleep(1000);
 
-		String Expected1 = "hands on exercise";
-		String Actualtext1 = driver.findElement(By.xpath("//*[@id=\"content-section\"]/div/h3")).getText();
-		Assert.assertEquals(Actualtext1, Expected1);
-		System.out.println(Actualtext1);
-
 		screenShot.captureScreenShot("ELTC_035_hands on exercise");
 
 		studentandrate.clickCorrectnRate1();
@@ -91,27 +85,17 @@ public class TeacherAssignStudentRateELTC_035_Test {
 		Thread.sleep(1000);
 		studentandrate.clickbutton1();
 		Thread.sleep(1000);
-
-		String Expected2 = "Update successful";
-		String Actualtext2 = driver.findElement(By.xpath("//*[@id=\"content-section\"]/div/div[2]/div/div[3]"))
-				.getText();
-		Assert.assertEquals(Actualtext2, Expected2);
-		System.out.println(Actualtext2);
+		
+		studentandrate.ClickAssertion1();
+		Thread.sleep(1000);
 
 		screenShot.captureScreenShot("ELTC_035_UpdateMessage");
 
 		studentandrate.clicknameAssignLink1();
 		Thread.sleep(1000);
-
-		String Expected4 = "Revised";
-		String Actualtext4 = driver.findElement(By.xpath("//span[contains(text(),'Revised')]")).getText();
-		Assert.assertEquals(Actualtext4, Expected4);
-		System.out.println(Actualtext4);
-
-		String Expected3 = "50.0 / 50";
-		String Actualtext3 = driver.findElement(By.xpath("//span[contains(text(),'50.0 / 50')]")).getText();
-		Assert.assertEquals(Actualtext3, Expected3);
-		System.out.println(Actualtext3);
+				
+		studentandrate.ClickAssertionRev();
+		Thread.sleep(1000);
 
 		screenShot.captureScreenShot("ELTC_035_Revised");
 

@@ -11,6 +11,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 
 public class TeacherTestCreationELTC_032 {
 	private static final String DropdownCategory = null;
@@ -22,18 +23,23 @@ public class TeacherTestCreationELTC_032 {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//h4[@class='course-items-title']/a")
+	// Click on Click Course link
+	@FindBy(xpath = "//a[contains(text(),'Kolkata1')]")
 	private WebElement clickcourse;
 
+	// Click on Tests icon
 	@FindBy(xpath = "//div[@class='big_icon']/a/img[@title='Tests']")
 	private WebElement clickTests;
 
+	// Click on Create a new test button
 	@FindBy(xpath = "//div[@class='controls']/a")
 	private WebElement clickbtnCreNewTest;
 
+	// Enter valid credentials in Test name textbox
 	@FindBy(id = "exercise_title")
 	private WebElement clickTestName;
 
+	// click on advanced setting button
 	@FindBy(how = How.ID, using = "advanced_params")
 	private WebElement adv_Setting;
 
@@ -45,7 +51,7 @@ public class TeacherTestCreationELTC_032 {
 	@FindBy(xpath = "//body[@contenteditable='true']")
 	private WebElement AddFrame1;
 
-	// For choosing the checkbox
+	// click on Enable start time checkbox
 	@FindBy(xpath = "//label[contains(text(),'Enable start time')]")
 	private WebElement checkBox;
 
@@ -53,21 +59,27 @@ public class TeacherTestCreationELTC_032 {
 	@FindBy(xpath = "//div[@class='input-group']/span/img[@title='Select date']")
 	private WebElement dateImage;
 
+	// Click on Now button
 	@FindBy(xpath = "//div[@class='ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all']//div//following::div[8]/button[1]")
 	private WebElement clickNow;
 
+	// Click on Done button
 	@FindBy(xpath = "//div[@class='ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all']//div//following::div[8]/button[2]")
 	private WebElement clickDone;
 
+	// Enter valid numeric values in Pass percentage textbox
 	@FindBy(id = "pass_percentage")
 	private WebElement passPercent;
 
+	// Click on Proceed to questions button
 	@FindBy(how = How.NAME, using = "submitExercise")
 	private WebElement btn_submitExercise;
 
+	// . Click on Multiple Choice icon
 	@FindBy(xpath = "//div[@class='well']/ul/li//div/a/img")
 	private WebElement clickMultipleChoice;
 
+	// Enter valid credentials in Questions textbox
 	@FindBy(how = How.ID, using = "question_admin_form_questionName")
 	private WebElement question;
 
@@ -83,7 +95,7 @@ public class TeacherTestCreationELTC_032 {
 	@FindBy(xpath = "//iframe[@title='Rich Text Editor, answer[2]']")
 	private WebElement AddFrameii;
 
-	// Writing text inside the frame
+	// Writing text inside the frame2
 	@FindBy(xpath = "//body[@contenteditable='true']")
 	private WebElement AddFrameii2;
 
@@ -91,7 +103,7 @@ public class TeacherTestCreationELTC_032 {
 	@FindBy(xpath = "//iframe[@title='Rich Text Editor, answer[3]']")
 	private WebElement AddFrameiii;
 
-	// Writing text inside the frame
+	// Writing text inside the frame3
 	@FindBy(xpath = "//body[@contenteditable='true']")
 	private WebElement AddFrameii3;
 
@@ -99,7 +111,7 @@ public class TeacherTestCreationELTC_032 {
 	@FindBy(xpath = "//iframe[@title='Rich Text Editor, answer[4]']")
 	private WebElement AddFrameiiii;
 
-	// Writing text inside the frame
+	// Writing text inside the frame4
 	@FindBy(xpath = "//body[@contenteditable='true']")
 	private WebElement AddFrameii4;
 
@@ -115,17 +127,19 @@ public class TeacherTestCreationELTC_032 {
 	@FindBy(name = "weighting[3]")
 	private WebElement Addscore3_1stQuestion;
 
-	// Writing score beside frame3 of quizQuestion 1st
+	// Writing score beside frame4 of quizQuestion 1st
 	@FindBy(name = "weighting[4]")
 	private WebElement Addscore4_1stQuestion;
 
-	// for clicking the button
+	// For clicking the button Submit Question
 	@FindBy(how = How.ID, using = "submit-question")
 	private WebElement clicksub_question;
 
+	// Click on Multiple Choice icon
 	@FindBy(xpath = "//div[@class='well']/ul/li//div/a/img")
 	private WebElement clickMultipleChoice1;
 
+	// Enter valid credentials in Questions textbox
 	@FindBy(id = "question_admin_form_questionName")
 	private WebElement clickMulChoice2ndQues;
 
@@ -173,7 +187,7 @@ public class TeacherTestCreationELTC_032 {
 	@FindBy(name = "weighting[3]")
 	private WebElement Addscore3_2ndQuestion;
 
-	// Writing score beside frame3 of quizQuestion 2nd
+	// Writing score beside frame4 of quizQuestion 2nd
 	@FindBy(name = "weighting[4]")
 	private WebElement Addscore4_2ndQuestion;
 
@@ -181,32 +195,31 @@ public class TeacherTestCreationELTC_032 {
 	@FindBy(xpath = "//tbody/tr[2]/td[2]//input[@name='correct']")
 	private WebElement Radiobutton;
 
-	// for clicking the button ( "Add this Question to test")
+	// For clicking the button ( "Add this Question to test")
 	@FindBy(how = How.ID, using = "submit-question")
 	private WebElement clicksub_question1;
 
-	// Clicking on preview icon
+	// For clicking on the preview icon
 	@FindBy(xpath = "//div[@class='actions']/a//following::a/img")
 	private WebElement clickPreviewIcon;
 
-	// Clicking on preview icon
+	// Clicking on Start test button
 	@FindBy(xpath = "//div[@class='exercise_overview_options col-md-12']/a")
 	private WebElement clickStartTest;
 
 	// Clicking on Selenium radio button
 	@FindBy(xpath = "//div[@class='main-question ']//following::div[@class='question_options']/child::label[1]/input")
-	// div[@class='question_options']/child::label[1]/input
 	private WebElement clickSelenium;
 
-	// Clicking on Selenium next Question button
+	// Clicking on next Question button
 	@FindBy(xpath = "//div[@class='form-actions']/button")
 	private WebElement clickNextQuesbutton;
 
-	// Clicking on Selenium radio button
+	// Clicking on Java radio button
 	@FindBy(xpath = "//div[@class='question_options']/child::label[2]/input")
 	private WebElement clickJava;
 
-	// Clicking on Selenium End test button
+	// Clicking on End test button
 	@FindBy(xpath = "//div[@class='form-actions']//button[@class='btn btn-warning question-validate-btn']")
 	private WebElement clickEndTest;
 
@@ -244,7 +257,7 @@ public class TeacherTestCreationELTC_032 {
 		this.AddFrame1.sendKeys(AddFrame1);
 	}
 
-	// to come out of frame
+	
 	public void Frame2() {
 
 		driver.switchTo().defaultContent();
@@ -275,6 +288,22 @@ public class TeacherTestCreationELTC_032 {
 		this.btn_submitExercise.click();
 	}
 
+	public void ClickAssetion361() {
+		String Expected361 = "Exercise added";
+		String Actualtext361 = driver.findElement(By.xpath("//*[@id=\"content-section\"]/div/div[2]")).getText();
+		Assert.assertEquals(Actualtext361, Expected361);
+		System.out.println(Actualtext361);
+	}
+
+	public void ClickAssetion362() {
+
+		String Expected362 = "0 questions, for a total score (all questions) of 0.";
+		String Actualtext362 = driver.findElement(By.xpath("//*[@id=\"content-section\"]/div/div[4]")).getText();
+		Assert.assertEquals(Actualtext362, Expected362);
+		System.out.println(Actualtext362);
+
+	}
+
 	public void clickMultipleChoice() {
 		this.clickMultipleChoice.click();
 	}
@@ -294,7 +323,7 @@ public class TeacherTestCreationELTC_032 {
 		this.AddFramei1.sendKeys(AddFramei1);
 	}
 
-	// to come out of frame
+	
 	public void Frame1out() {
 
 		driver.switchTo().defaultContent();
@@ -310,7 +339,6 @@ public class TeacherTestCreationELTC_032 {
 		this.AddFrameii2.sendKeys(AddFrameii2);
 	}
 
-	// to come out of frame
 	public void Frame2out() {
 
 		driver.switchTo().defaultContent();
@@ -342,7 +370,7 @@ public class TeacherTestCreationELTC_032 {
 		this.AddFrameii4.sendKeys(AddFrameii4);
 	}
 
-	// to come out of frame
+	
 	public void Frame4out() {
 
 		driver.switchTo().defaultContent();
@@ -370,6 +398,14 @@ public class TeacherTestCreationELTC_032 {
 
 	public void btnsubQuestion() {
 		this.clicksub_question.click();
+	}
+
+	public void ClickAssertion44() {
+		String Expected44 = "1 questions, for a total score (all questions) of 1.";
+		String Actualtext44 = driver.findElement(By.xpath("//*[@id=\"content-section\"]/div/div[4]")).getText();
+		Assert.assertEquals(Actualtext44, Expected44);
+		System.out.println(Actualtext44);
+
 	}
 
 	public void MultipleChoice1() {
@@ -407,7 +443,7 @@ public class TeacherTestCreationELTC_032 {
 		this.AddFrame2_2ndQuestion2Text.sendKeys(AddFrame2_2ndQuestion2Text);
 	}
 
-	// to come out of frame
+	
 	public void Frame2out2ndQuestion() {
 
 		driver.switchTo().defaultContent();
@@ -423,7 +459,7 @@ public class TeacherTestCreationELTC_032 {
 		this.AddFrame3_2ndQuestion3Text.sendKeys(AddFrame3_2ndQuestion3Text);
 	}
 
-	// to come out of frame3 2nd Question
+	
 	public void Frame3out2ndQuestion() {
 
 		driver.switchTo().defaultContent();
@@ -439,7 +475,7 @@ public class TeacherTestCreationELTC_032 {
 		this.AddFrame4_2ndQuestion4Text.sendKeys(AddFrame4_2ndQuestion4Text);
 	}
 
-	// to come out of frame4 2nd Question
+	
 	public void Frame4out2ndQuestion() {
 
 		driver.switchTo().defaultContent();
@@ -477,6 +513,13 @@ public class TeacherTestCreationELTC_032 {
 		this.clicksub_question1.click();
 	}
 
+	public void ClickAssertion54() {
+		String Expected54 = "2 questions, for a total score (all questions) of 2.";
+		String Actualtext54 = driver.findElement(By.xpath("//*[@id=\"content-section\"]/div/div[4]")).getText();
+		Assert.assertEquals(Actualtext54, Expected54);
+		System.out.println(Actualtext54);
+	}
+
 	public void clickStartTest() {
 		this.clickStartTest.click();
 	}
@@ -496,5 +539,13 @@ public class TeacherTestCreationELTC_032 {
 	public void clickEndTest() {
 		this.clickEndTest.click();
 	}
+	
+	public void ClickAssertion58() {
+		String Expected58= "Score for the test: 2 / 2";
+		String Actualtext58 = driver.findElement(By.xpath("//*[@id=\"content-section\"]/div/div[5]/div/div/h3")).getText();
+		Assert.assertEquals(Actualtext58, Expected58);
+		System.out.println(Actualtext58);
+	}
+	
 
 }

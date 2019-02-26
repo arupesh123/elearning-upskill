@@ -44,7 +44,6 @@ public class TeacherAttchCertificateELTC_033_Test {
 		attachcreation = new TeacherAttachCertificateELTC_033(driver);
 		baseUrl = properties.getProperty("baseURL");
 		screenShot = new ScreenShot_ELTC_001(driver);
-		// open the browser
 		driver.get(baseUrl);
 	}
 
@@ -83,40 +82,29 @@ public class TeacherAttchCertificateELTC_033_Test {
 		Thread.sleep(1000);
 		attachcreation.btn_LearningActivity();
 		Thread.sleep(1000);
-			
+		attachcreation.clickAssertionLinkAdd();
+		Thread.sleep(1000);
 
-		String Expected1 = "The link has been added.";
-		String Actualtext1 = driver.findElement(By.xpath("//*[@id=\"content-section\"]/div/div[2]")).getText();
-		Assert.assertEquals(Actualtext1, Expected1);
-		System.out.println(Actualtext1);
-		
 		screenShot.captureScreenShot("ELTC_033_Link Added");
-		
+
 		attachcreation.checkbox();
 		Thread.sleep(1000);
 		attachcreation.clickEdit();
 		Thread.sleep(1000);
 		attachcreation.clickEditLink();
 		Thread.sleep(1000);
-		
-		String Expected2= "Assessment edited";
-		String Actualtext2 = driver.findElement(By.xpath("//*[@id=\"content-section\"]/div/div[2]")).getText();
-		Assert.assertEquals(Actualtext2, Expected2);
-		System.out.println(Actualtext2);
-		
+
+		attachcreation.clickAssertionEdit();
+		Thread.sleep(1000);
+
 		screenShot.captureScreenShot("ELTC_033_Assessment Edited");
-		
-		
+
 		attachcreation.clickAttachCert();
 		Thread.sleep(1000);
-		
-		String Expected3= "Default certificate";
-		String Actualtext3 = driver.findElement(By.xpath("//tr[@class='row_even']/td[2]/a")).getText();
-		Assert.assertEquals(Actualtext3, Expected3);
-		System.out.println(Actualtext3);
-		
+		attachcreation.clickAssertionAttach();
+		Thread.sleep(1000);
+
 		screenShot.captureScreenShot("ELTC_033_Default Certificate");
-		
-		
+
 	}
 }
