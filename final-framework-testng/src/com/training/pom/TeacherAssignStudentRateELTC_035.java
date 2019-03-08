@@ -13,6 +13,9 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
+
+//TO verify whether application allows teacher to review the assignment submitted by the student & rate
+
 public class TeacherAssignStudentRateELTC_035 {
 	private static final String DropdownCategory = null;
 
@@ -55,30 +58,33 @@ public class TeacherAssignStudentRateELTC_035 {
 	
 
 	// ==============================================================================
-
+	//Method to click on click courese
 	public void clickCourse() {
 		this.clickcourse.click();
 
 	}
-
+	//Method to clcik on Assignments
 	public void clickAssignments1() {
 		this.clickAssignments.click();
 	}
-
+	//Method to on Assin button
 	public void clickAssignSub1() {
 		this.clickAssignSub.click();
 	}
+	//Method to clcik correction rate
 	public void clickCorrectnRate1() {
 		this.clickCorrectnRate.click();
 	}
+	//Method to send value to text to send score
 	public void sendScore1(String Score) {
 		this.Score.clear();
 		this.Score.sendKeys(Score);
 	}
+	//Method to clcik button
 	public void clickbutton1() {
 		this.clickButton.click();
 	}
-		
+	//Method toclick assertions
 	public void ClickAssertion1() {
 	String Expected2 = "Update successful";
 	String Actualtext2 = driver.findElement(By.xpath("//*[@id=\"content-section\"]/div/div[2]/div/div[3]"))
@@ -86,11 +92,11 @@ public class TeacherAssignStudentRateELTC_035 {
 	Assert.assertEquals(Actualtext2, Expected2);
 	System.out.println(Actualtext2);
 	}
-
+	//Method to clcik assignment link
 	public void clicknameAssignLink1() {
 		this.clicknameAssignLink.click();
 	}
-	
+	//Method to check for assertion
 	public void ClickAssertionRev() {
 	String Expected4 = "Revised";
 	String Actualtext4 = driver.findElement(By.xpath("//span[contains(text(),'Revised')]")).getText();

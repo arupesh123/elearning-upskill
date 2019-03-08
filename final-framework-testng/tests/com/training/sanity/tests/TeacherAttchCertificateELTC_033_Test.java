@@ -3,6 +3,7 @@ package com.training.sanity.tests;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -33,8 +34,11 @@ public class TeacherAttchCertificateELTC_033_Test {
 	private TeacherAttachCertificateELTC_033 attachcreation;
 	private static Properties properties;
 	private ScreenShot_ELTC_001 screenShot;
+	
+	//TO verify whether application allows teacher to add assessment as online activity & Attach certificate
 
 	@BeforeClass
+	//Open the browser
 	public void setUpBeforeClass() throws IOException {
 		properties = new Properties();
 		FileInputStream inStream = new FileInputStream("./resources/others.properties");
@@ -48,62 +52,77 @@ public class TeacherAttchCertificateELTC_033_Test {
 	}
 
 	@AfterClass
+	//Closes the browser
 	public void tearDown() throws Exception {
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 		driver.quit();
 	}
 
 	@Test(priority = 1)
+	//This test will run first
 	public void validLoginTest() throws InterruptedException {
 
 		StudentLoginELTC_002.sendUserName("sourik54");
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 		StudentLoginELTC_002.sendPassword("Systane@12");
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 		StudentLoginELTC_002.clickLoginBtn();
 
 	}
 
 	@Test(priority = 2)
+	
+	//This test will run second
 
 	public void validCoursecreation() throws InterruptedException {
-
+        
+		//Click on the course link
 		attachcreation.clickCourse();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Click on the Assessment button
 		attachcreation.clickAssessment();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Click on Add icon Line Activity
 		attachcreation.clickAddonLineActivity();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Click on Dropdown
 		attachcreation.category1();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Slecet value from dropdown
 		attachcreation.category2();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Write values in Send Weight Text
 		attachcreation.sendWeightText("1");
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Click on button Learning activity
 		attachcreation.btn_LearningActivity();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Check for assert
 		attachcreation.clickAssertionLinkAdd();
-		Thread.sleep(1000);
-
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Capture screenshots
 		screenShot.captureScreenShot("ELTC_033_Link Added");
-
+        //Click on the chekbox  
 		attachcreation.checkbox();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Click on the edit Icon
 		attachcreation.clickEdit();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Click on Edit link button
 		attachcreation.clickEditLink();
-		Thread.sleep(1000);
-
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Check for assert
 		attachcreation.clickAssertionEdit();
-		Thread.sleep(1000);
-
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+        //Capture screenshot
 		screenShot.captureScreenShot("ELTC_033_Assessment Edited");
-
+        //Click for attaching cert
 		attachcreation.clickAttachCert();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Check for assertion
 		attachcreation.clickAssertionAttach();
-		Thread.sleep(1000);
-
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Capture screenshot
 		screenShot.captureScreenShot("ELTC_033_Default Certificate");
 
 	}

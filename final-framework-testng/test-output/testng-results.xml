@@ -1,29 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="43021" started-at="2019-02-26T15:37:27Z" finished-at="2019-02-26T15:38:10Z">
+  <suite name="Default suite" duration-ms="156477" started-at="2019-03-06T17:04:44Z" finished-at="2019-03-06T17:07:20Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="43021" started-at="2019-02-26T15:37:27Z" finished-at="2019-02-26T15:38:10Z">
-      <class name="com.training.sanity.tests.TeacherAssignStudentRateELTC_035_Test">
-        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.TeacherAssignStudentRateELTC_035_Test@1593948d]" name="setUpBeforeClass" is-config="true" duration-ms="9782" started-at="2019-02-26T21:07:27Z" finished-at="2019-02-26T21:07:37Z">
+    <test name="Default test" duration-ms="156477" started-at="2019-03-06T17:04:44Z" finished-at="2019-03-06T17:07:20Z">
+      <class name="com.training.regression.tests.TeacherCourse_Student_Register_ELTC_064_Test">
+        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.regression.tests.TeacherCourse_Student_Register_ELTC_064_Test@1593948d]" name="setUpBeforeClass" is-config="true" duration-ms="16967" started-at="2019-03-06T22:34:44Z" finished-at="2019-03-06T22:35:01Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeClass -->
-        <test-method status="PASS" signature="validLoginTest()[pri:1, instance:com.training.sanity.tests.TeacherAssignStudentRateELTC_035_Test@1593948d]" name="validLoginTest" duration-ms="5093" started-at="2019-02-26T21:07:37Z" finished-at="2019-02-26T21:07:42Z">
+        <test-method status="PASS" signature="validLoginTeacherTest()[pri:1, instance:com.training.regression.tests.TeacherCourse_Student_Register_ELTC_064_Test@1593948d]" name="validLoginTeacherTest" duration-ms="8124" started-at="2019-03-06T22:35:01Z" finished-at="2019-03-06T22:35:09Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validLoginTest -->
-        <test-method status="PASS" signature="validCoursecreation()[pri:2, instance:com.training.sanity.tests.TeacherAssignStudentRateELTC_035_Test@1593948d]" name="validCoursecreation" duration-ms="26040" started-at="2019-02-26T21:07:42Z" finished-at="2019-02-26T21:08:08Z">
+        </test-method> <!-- validLoginTeacherTest -->
+        <test-method status="PASS" signature="TracherCoursecreation1()[pri:2, instance:com.training.regression.tests.TeacherCourse_Student_Register_ELTC_064_Test@1593948d]" name="TracherCoursecreation1" duration-ms="79432" started-at="2019-03-06T22:35:09Z" finished-at="2019-03-06T22:36:28Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validCoursecreation -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.sanity.tests.TeacherAssignStudentRateELTC_035_Test@1593948d]" name="tearDown" is-config="true" duration-ms="2088" started-at="2019-02-26T21:08:08Z" finished-at="2019-02-26T21:08:10Z">
+        </test-method> <!-- TracherCoursecreation1 -->
+        <test-method status="PASS" signature="StudentCourseRegister()[pri:3, instance:com.training.regression.tests.TeacherCourse_Student_Register_ELTC_064_Test@1593948d]" name="StudentCourseRegister" duration-ms="28681" started-at="2019-03-06T22:36:28Z" finished-at="2019-03-06T22:36:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- StudentCourseRegister -->
+        <test-method status="PASS" signature="AdminloginView()[pri:4, instance:com.training.regression.tests.TeacherCourse_Student_Register_ELTC_064_Test@1593948d]" name="AdminloginView" duration-ms="22015" started-at="2019-03-06T22:36:57Z" finished-at="2019-03-06T22:37:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AdminloginView -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.regression.tests.TeacherCourse_Student_Register_ELTC_064_Test@1593948d]" name="tearDown" is-config="true" duration-ms="1213" started-at="2019-03-06T22:37:19Z" finished-at="2019-03-06T22:37:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.training.sanity.tests.TeacherAssignStudentRateELTC_035_Test -->
+      </class> <!-- com.training.regression.tests.TeacherCourse_Student_Register_ELTC_064_Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -3,6 +3,7 @@ package com.training.sanity.tests;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -28,8 +29,11 @@ public class RegisterTeacherELTC_005_Test {
 	private RegisterTeacherELTC_005 RegisterTeacherELTC_005;
 	private static Properties properties;
 	private ScreenShot_ELTC_005 screenShot;
+	
+	//TO verify whether application allows user to get registered as Teacher
 
 	@BeforeClass
+	//Open the URl
 	public static void setUpBeforeClass() throws IOException {
 		properties = new Properties();
 		FileInputStream inStream = new FileInputStream("./resources/others.properties");
@@ -37,6 +41,7 @@ public class RegisterTeacherELTC_005_Test {
 	}
 
 	@BeforeMethod
+	//Open the browser
 	public void setUp() throws Exception {
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
 		RegisterTeacherELTC_005 = new RegisterTeacherELTC_005(driver);
@@ -47,54 +52,53 @@ public class RegisterTeacherELTC_005_Test {
 	}
 
 	@AfterMethod
+	//The browser closes
 	public void tearDown() throws Exception {
-	Thread.sleep(1000);
+	driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 	driver.quit();
 	}
 
 	@Test
 	public void validLoginTest() throws InterruptedException {
-
+		
+        //Click on the Sign up link
 		RegisterTeacherELTC_005.clickSignUp();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Pass the value to sendfirst name
 		RegisterTeacherELTC_005.sendFirstName("Sourik");
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Pass the value to lastname 
 		RegisterTeacherELTC_005.sendLastName("Mukherjee");
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Pass the value to email
 		RegisterTeacherELTC_005.sendEmail("dollymuk06@gmail.com");
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Pass the value to username 
 		RegisterTeacherELTC_005.senduserName("sourik55");
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Pass the value to send password
 		RegisterTeacherELTC_005.sendPassword("Systane@12");
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Pass the value to send conf password
 		RegisterTeacherELTC_005.sendConfPassword("Systane@12");
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Pass the value to send phone 
 		RegisterTeacherELTC_005.sendPhone("9098909876");
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Click on the category
 		RegisterTeacherELTC_005.category1();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//click on the category2
 		RegisterTeacherELTC_005.category2();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Click on the Button
 		RegisterTeacherELTC_005.clickbtn_Button();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Click on the register button.
 		RegisterTeacherELTC_005.clickbtn_Register();
-		Thread.sleep(1000);
-
-		
-		String Expected0 = "Dear Sourik Mukherjee,\n" + 
-				"\n" + 
-				"Your personal settings have been registered.";
-		String Actualtext0 = driver.findElement(By.xpath("//body[contains(@class,'section-global')]/div[@class='wrap']/section[@id='content-section']/div[@class='container']/div[@class='row']/div[@class='col-xs-12 col-md-12']/p[1]\r\n" + 
-				"")).getText();
-		
-		Assert.assertEquals(Actualtext0,Expected0);
-		System.out.println(Actualtext0);
-		
-		String Expected2 = "An email has been sent to help you remember your login and password.";
-		String Actualtext2 = driver.findElement(By.xpath("//*[@id=\"content-section\"]/div/div[2]/div/p[2]")).getText();
-		Assert.assertEquals(Actualtext2,Expected2);
-		System.out.println(Actualtext2);
-		
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		RegisterTeacherELTC_005.assertion();		
+		//capture the screenshot
 		screenShot.captureScreenShot("ELTC_005");
 
 	}

@@ -3,6 +3,7 @@ package com.training.sanity.tests;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -32,8 +33,12 @@ public class TeacherAddCourseELTC_031_Test {
 	private TeacherAddCourseELTC_031 coursercreation;
 	private static Properties properties;
 	private ScreenShot_ELTC_001 screenShot;
+	
+	//To verify whether application allows teacher to create a course, add description, objective & Topics
 
 	@BeforeClass
+	
+	// Chrome driver will open
 	public void setUpBeforeClass() throws IOException {
 		properties = new Properties();
 		FileInputStream inStream = new FileInputStream("./resources/others.properties");
@@ -43,138 +48,151 @@ public class TeacherAddCourseELTC_031_Test {
 		coursercreation = new TeacherAddCourseELTC_031(driver);
 		baseUrl = properties.getProperty("baseURL");
 		screenShot = new ScreenShot_ELTC_001(driver);
-		// open the browser
 		driver.get(baseUrl);
 	}
 
 	@AfterClass
+	
+	// The instance will get closed
 	public void tearDown() throws Exception {
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 		driver.quit();
 	}
 
 	@Test(priority = 1)
+	
+	// This Test will run first
 	public void validLoginTest() throws InterruptedException {
         
 		
-		
+		// Give username
 		StudentLoginELTC_002.sendUserName("sourik54");
-	    Thread.sleep(1000);
+	    driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+	    //Give Password
 	  	StudentLoginELTC_002.sendPassword("Systane@12");
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Click on Login Button
 		StudentLoginELTC_002.clickLoginBtn();
 
 	}
 
 	@Test(priority = 2)
+	
+	//This test will run second
 
 	public void validCoursecreation() throws InterruptedException {
          
-		
+		//Click on Course Link
 		coursercreation.clickCourse();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		// Click on Course creation
 		coursercreation.sendCourseName("Kolkata11");
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Click on Advance Setting
 		coursercreation.clickAdvSetting();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Click on Dropdown arrow
 		coursercreation.category1();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Choose the desired from dropdown
 		coursercreation.category2();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		// Pass values in Course code
 		coursercreation.sendCourseCode("Test11");
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		// Click on Course Submit button
 		coursercreation.AddCourseSubmit();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Click on Add Intro button
 		coursercreation.AddIntro();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);		
+		//Click on the frame
 		coursercreation.Frame();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Write Selenium in frame
 		coursercreation.Frame1("This is Selenium");
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Come out of frame
 		coursercreation.Frame2();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Click Save to text button
 		coursercreation.clickSaveToText();
-
-		//screenShot.captureScreenShot("ELTC_031_Create Course");
-		
+        //Click on Assert
 		coursercreation.clickAssertion121();
-		
+		//Capturing assest screenshots
 		screenShot.captureScreenShot("ELTC_031_Intro was updated");
 		screenShot.captureScreenShot("ELTC_031_This is Selenium");
-
-		/*String Expected121 = "Intro was updated";
-		String Actualtext121 = driver.findElement(By.xpath("//div[contains(text(),'Intro was updated')]")).getText();
-		Assert.assertEquals(Actualtext121, Expected121);
-		System.out.println(Actualtext121);
-
-		String Expected122 = "This is Selenium";
-		String Actualtext122 = driver.findElement(By.xpath("//p[contains(text(),'This is Selenium')]")).getText();
-		Assert.assertEquals(Actualtext122, Expected122);
-		System.out.println(Actualtext122);*/
-
+		//Click on Course Description
 		coursercreation.courseDescrpIcon();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Click on Description
 		coursercreation.DescrpIcon();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Click on Selenium Desc Title
 		coursercreation.sendDescpTitle("Selenium Description Title");
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		// Click on the frame
 		coursercreation.DescpContentFrame();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Write comments in frame
 		coursercreation.DescpContentFrametextFrame("This is Description Content ");
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Come out of frame
 		coursercreation.FramedefDescp();
-		Thread.sleep(1000);
-		coursercreation.ClickSave();		
-		coursercreation.clickAssertion17();
-
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Click on save button
+		coursercreation.ClickSave();
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Check for Assert message
+		coursercreation.clickAssertionDesc();
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Capturing screenshot
 		screenShot.captureScreenShot("ELTC_031_Description");
-
-		/*String Expected17 = "The description has been updated";
-		String Actualtext17 = driver.findElement(By.xpath("//*[@id=\"content-section\"]/div/div[2]")).getText();
-		Assert.assertEquals(Actualtext17, Expected17);
-		System.out.println(Actualtext17);*/
-
-		
+		// click on object Icon
 		coursercreation.ObjIcon();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		// click on Obj Desc title
 		coursercreation.ObjDescpTitle("This is Objective Title ");
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Click on Obj Content Frame
 		coursercreation.ObjContentFrame();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Write comments in frame
 		coursercreation.ObjContentFrameText("This is Objective Content ");
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Come out of Obj Frame
 		coursercreation.FramedefObj();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Click on Save Object
 		coursercreation.ClickSaveObj();
-		coursercreation.clickAssertion21();		
-		
-
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Check for the Assert message
+		coursercreation.clickAssertionObj();
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Capture the screenshot
 		screenShot.captureScreenShot("ELTC_031_Objectives_Description");
-/*
-		String Expected21 = "The description has been updated";
-		String Actualtext21 = driver.findElement(By.xpath("//*[@id=\"content-section\"]/div/div[2]")).getText();
-		Assert.assertEquals(Actualtext21, Expected21);
-		System.out.println(Actualtext21);*/
-
-		
+		//Click on Topics Icon
 		coursercreation.TopicsIcon();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Write comments in frame
 		coursercreation.TopDescpTitle("This is Topics Title ");
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Click On frame
 		coursercreation.TopContentFrame();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Write comments in frame
 		coursercreation.TopContentFrame("This is Topic Content");
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Come out of topic frame
 		coursercreation.FramedefTop();
-		Thread.sleep(1000);
-		coursercreation.ClickSaveTop();		
-		coursercreation.clickAssertion25();
-
-		/*String Expected25 = "The description has been updated";
-		String Actualtext25 = driver.findElement(By.xpath("//*[@id=\"content-section\"]/div/div[2]")).getText();
-		Assert.assertEquals(Actualtext25, Expected25);
-		System.out.println(Actualtext25);
-*/
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Click on save for top frame
+		coursercreation.ClickSaveTop();	
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Check for Assert message
+		coursercreation.clickAssertionTitle();
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Capture screenshot
 		screenShot.captureScreenShot("ELTC_031_Topics_Description");
 
 	}

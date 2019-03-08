@@ -1,5 +1,10 @@
 package com.training.bean;
 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
 public class LoginBean {
 	private String userName;
 	private String password;
@@ -35,3 +40,4 @@ public class LoginBean {
 	}
 
 }
+

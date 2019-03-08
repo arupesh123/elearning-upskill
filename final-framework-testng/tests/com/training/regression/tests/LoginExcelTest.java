@@ -43,10 +43,10 @@ public class LoginExcelTest {
 		driver.get(baseUrl);
 	}
 
-	@AfterMethod
+	/*@AfterMethod
 	public void tearDown() throws Exception {
 		driver.quit();
-	}
+	}*/
 
 	@Test(dataProvider = "excel-inputs", dataProviderClass = LoginDataProviders.class)
 	public void loginDBTest(String userName, String password) {
@@ -54,6 +54,8 @@ public class LoginExcelTest {
 		loginPOM.sendPassword(password);
 		loginPOM.clickLoginBtn();
 		screenShot.captureScreenShot(userName);
+		
+		
 
 	}
 

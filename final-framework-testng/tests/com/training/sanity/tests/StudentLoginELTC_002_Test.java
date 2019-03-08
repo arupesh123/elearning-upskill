@@ -26,8 +26,11 @@ public class StudentLoginELTC_002_Test {
 	private StudentLoginELTC_002 StudentLoginELTC_002_Test;
 	private static Properties properties;
 	private ScreenShot_ELTC_002 screenShot;
+	
+	//To verify whether application allows student to get logged in by entering valid credentials
 
 	@BeforeClass
+	// opening of the url
 	public void setUpBeforeClass() throws IOException {
 		properties = new Properties();
 		FileInputStream inStream = new FileInputStream("./resources/others.properties");
@@ -42,23 +45,22 @@ public class StudentLoginELTC_002_Test {
 
 		
 	@AfterClass
+	//the browser will close
 	public void tearDown() throws Exception {
 		Thread.sleep(1000);
 		driver.quit();
 	}
 	
 	@Test
+	//The actual test runs
 	public void validLoginTest() {
+		// here the student username / password is given 
 		StudentLoginELTC_002_Test.sendUserName("sourik50");
 		StudentLoginELTC_002_Test.sendPassword("Frooti@14");
 		StudentLoginELTC_002_Test.clickLoginBtn(); 
-		
-		boolean Expected = true;
-		boolean Actual = driver.findElement(By.xpath("//*[@id=\"homepage-course\"]/div/p[1]")).isDisplayed();
-		String Actual1text = driver.findElement(By.xpath("//*[@id=\"homepage-course\"]/div/p[1]")).getText();
-		Assert.assertEquals(Actual, Expected);
-		System.out.println(Actual1text);
-		
+		//check for assertion
+		StudentLoginELTC_002_Test.assertion();
+		//capturing of screenshot
 		screenShot.captureScreenShot("ELTC_002");
 	}
 	

@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -47,22 +48,36 @@ public class LoginDBTest {
 		driver.get(baseUrl);
 	}
 
-	@AfterMethod
+	/*@AfterMethod
 	public void tearDown() throws Exception {
 		Thread.sleep(1000);
 		driver.quit();
-	}
+	}*/
 
 
 	@Test(dataProvider = "db-inputs", dataProviderClass = LoginDataProviders.class)
-	public void loginDBTest(String userName, String password) {
+	public void loginDBTest(String userName, String password) throws InterruptedException {  // came from database
 		// for demonstration 
 //		genericMethods.getElement("login", "id"); 
-				
-		loginPOM.sendUserName(userName);
 		
-		loginPOM.sendPassword(password);
+		
+		String username = loginPOM.sendUserName("admin");
+		Thread.sleep(2000);
+		String password1 = loginPOM.sendPassword("admin@1234");
+		Thread.sleep(2000);
 		loginPOM.clickLoginBtn();
+		
+		System.out.println("Database username:  " + userName + "  Database password:  " + password);
+		System.out.println("Application username:  " + username + "  Application password:  " + password1);
+		
+		
+		
+		Assert.assertEquals(username, userName);
+		Assert.assertEquals(password1, password);
+		
+		
+		
+		
 		
 		screenShot.captureScreenShot(userName);
 

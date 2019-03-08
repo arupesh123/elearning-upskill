@@ -3,6 +3,7 @@ package com.training.sanity.tests;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -29,8 +30,11 @@ public class EditprofileELTC_003_Test {
 	private StudentLoginELTC_002 studentLoginELTC_002;
 	private EditprofileELTC_003 editProfile;
 	private ScreenShot_ELTC_003 screenShot;
+	
+	//To verify whether application allows user to change the password in Edit Profile page
 
 	@BeforeClass
+	//The url and browser opens up
 	public void setUpBeforeClass() throws IOException {
 		Properties properties = new Properties();
 		FileInputStream inStream = new FileInputStream("./resources/others.properties");
@@ -46,12 +50,14 @@ public class EditprofileELTC_003_Test {
 
 		
 	@AfterClass
+	// The browser closes
 	public void tearDown() throws Exception {
 		Thread.sleep(1000);
 	driver.quit();
 	}
 	
 	@Test(priority=1) 
+	//The test is performed here and runs 1st
 	public void validLoginTest() {
 		studentLoginELTC_002.sendUserName("sourik50");
 		studentLoginELTC_002.sendPassword("Systane@12");
@@ -61,24 +67,25 @@ public class EditprofileELTC_003_Test {
 	}
 	
 	@Test(priority=2) 
-	
+	//The test is performed here and runs 2nd
 	public void validChangePassword() throws InterruptedException {
+		//Click on Edit profile
 		editProfile.editprofile();
-		Thread.sleep(3000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		// Write password in text box
 		editProfile.sendPassword1("Systane@12");
-		Thread.sleep(3000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Write send password in text box
 		editProfile.sendNewPassword("Frooti@14");
-		Thread.sleep(3000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Write send confirm password in text box
 		editProfile.sendConfPassword("Frooti@14");
-		Thread.sleep(3000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Click on send button
 		editProfile.clickbtn_Save();
-		
-				
-		String Expected = "Your new profile has been saved";
-		String Actualtext = driver.findElement(By.xpath("//*[@id=\"content-section\"]/div/div[2]/div/div[1]")).getText();
-		Assert.assertEquals(Actualtext,Expected);
-		System.out.println(Actualtext);
-		
-	screenShot.captureScreenShot("ELTC_003_2");
+		//check for assertion
+		editProfile.assertion();
+		//Capture screenshot
+		screenShot.captureScreenShot("ELTC_003_2");
 	}
 }

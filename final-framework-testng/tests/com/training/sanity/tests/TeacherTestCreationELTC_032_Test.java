@@ -3,6 +3,7 @@ package com.training.sanity.tests;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -32,8 +33,11 @@ public class TeacherTestCreationELTC_032_Test {
 	private TeacherTestCreationELTC_032 coursercreation;
 	private static Properties properties;
 	private ScreenShot_ELTC_001 screenShot;
+	
+	//To verify whether application allows teacher to create a Test
 
 	@BeforeClass
+	// The Chrome browser should open up
 	public void setUpBeforeClass() throws IOException {
 		properties = new Properties();
 		FileInputStream inStream = new FileInputStream("./resources/others.properties");
@@ -43,176 +47,235 @@ public class TeacherTestCreationELTC_032_Test {
 		coursercreation = new TeacherTestCreationELTC_032(driver);
 		baseUrl = properties.getProperty("baseURL");
 		screenShot = new ScreenShot_ELTC_001(driver);
-		// open the browser
 		driver.get(baseUrl);
 	}
 
 	@AfterClass
+	//Chrome driver closes
 	public void tearDown() throws Exception {
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 		driver.quit();
 	}
 
 	@Test(priority = 1)
+	
+	//This test will run first
+	
 	public void validLoginTest() throws InterruptedException {
 
+		// Give username
 		StudentLoginELTC_002.sendUserName("sourik54");
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		// Give Password
 		StudentLoginELTC_002.sendPassword("Systane@12");
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		// Click on Login Button
 		StudentLoginELTC_002.clickLoginBtn();
 
 	}
 
 	@Test(priority = 2)
+	
+	//This test will run second
 
 	public void validCoursecreation() throws InterruptedException {
-
+        
+		//Click on Click Course link
 		coursercreation.clickCourse();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		// Click Tests icon
 		coursercreation.clickTests();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Click button Create new test
 		coursercreation.clickCreateaNewTest();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Write something in Test Name
 		coursercreation.sendTestName("Online Quiz3");
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Click on AdvSettng button
 		coursercreation.clickAdvSetting();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Click on Frame 
 		coursercreation.Frame();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Write something in Name Desc text box
 		coursercreation.sendTestNameDesc("Quiz3");
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Click on the frame
 		coursercreation.Frame2();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Click on Checkbox
 		coursercreation.clickCheckBox();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Click on date Image
 		coursercreation.clickDateImage();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Click on Now button
 		coursercreation.clickNow();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Click on Done button
 		coursercreation.clickDone();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Give values in Pass %
 		coursercreation.clickPassPercent("100");
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Click on Button Submit Exercise
 		coursercreation.btnsubmitExercise();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Click on Click Assert
 		coursercreation.ClickAssetion361();
-		
+        //Capture screenshot
 		screenShot.captureScreenShot("ELTC_032_Excercise Added");
-		
+        //Check for Assert
 		coursercreation.ClickAssetion362();
-
+        //Capture screenshot
 		screenShot.captureScreenShot("ELTC_032_0 Questions");
-		
-		
+        //Clcik on Multiple choice.
 		coursercreation.clickMultipleChoice();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Write something on Questions
 		coursercreation.sendQuestionText("Which course your learning");
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//click on frame.
 		coursercreation.Framei();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Write textin frame
 		coursercreation.send1text("Selenium");
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//come out of frmae
 		coursercreation.Frame1out();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Click on frame2
 		coursercreation.Framei2();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Write text java in frame2
 		coursercreation.send2text("Java");
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//come out of frame2
 		coursercreation.Frame2out();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Click on frame3
 		coursercreation.Framei3();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Send text C in frame3
 		coursercreation.send3text("C");
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//come out of frame3
 		coursercreation.Frame3out();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Click on frame4
 		coursercreation.Framei4();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Send text C# in frame4
 		coursercreation.send4text("C#");
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//come out of frame4
 		coursercreation.Frame4out();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Enter text 1 in score
 		coursercreation.score1_1stQuestion("1");
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Enter text 1 in score
 		coursercreation.score2_1stQuestion("1");
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Enter text 1 in score
 		coursercreation.score3_1stQuestion("1");
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Enter text 1 in score
 		coursercreation.score4_1stQuestion("1");
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Clcik on Sub Question button
 		coursercreation.btnsubQuestion();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//check for assert
 		coursercreation.ClickAssertion44();
-		
-		
+        //Capture screenshot
 		screenShot.captureScreenShot("ELTC_032_1 Questions");
-		
+        // Click on Multiple choice
 		coursercreation.MultipleChoice1();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Write something in Multiple choice Question
 		coursercreation.clickMulChoiceQues2("Which language are you using in selenium?");
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Click on the frame1
 		coursercreation.Frame1_2ndQuestion1();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Write something in frame
 		coursercreation.send1Text2ndQuestion("Phython");
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Come out of frame
 		coursercreation.Frame2out2ndQuestion();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Click on the frame2
 		coursercreation.Frame2_2ndQuestion2();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Write something in frame
 		coursercreation.send2Text2ndQuestion("Java");
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Come out of the frame
 		coursercreation.Frame2out2ndQuestion();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Click on frmae3
 		coursercreation.Frame3_2ndQuestion3();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Write something in frame
 		coursercreation.send3Text2ndQuestion("C");
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Come out of frame
 		coursercreation.Frame3out2ndQuestion();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Write something in frame
 		coursercreation.Frame4_2ndQuestion4();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Write something in frame
 		coursercreation.send4Text2ndQuestion("C#");
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Come out of frame		
 		coursercreation.Frame4out2ndQuestion();
-		Thread.sleep(1000);
-		
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Write something in frame
 		coursercreation.score1_2ndQuestion("1");
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Write something in frame
 		coursercreation.score2_2ndQuestion("1");
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Write something in frame
 		coursercreation.score3_2ndQuestion("1");
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Write something in frame
 		coursercreation.score4_2ndQuestion("1");
-		
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Click on Radio button
 		coursercreation.clickRadioButton();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 		coursercreation.clickSub_Ques1();
-		Thread.sleep(1000);
-		
-		coursercreation.ClickAssertion54();
-		Thread.sleep(1000);
-		
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Check assertions
+        coursercreation.ClickAssertion54();
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+        //Check for the screenshots
 		screenShot.captureScreenShot("ELTC_032_2 Questions");
-		
+        //Click on the Preview Icon
 		coursercreation.clickPreviewIcon();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Click on Start test
 		coursercreation.clickStartTest();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Click on Selenium radio button
 		coursercreation.clickSelenium();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Click on next question radio button
 		coursercreation.clicknextQuesbutton();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Click on Java radio button
 		coursercreation.clickJava();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Click on End test button
 		coursercreation.clickEndTest();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 		coursercreation.ClickAssertion58();
-			
+        //Capture screenshot.
 		screenShot.captureScreenShot("ELTC_032_Score for test");
-		
-		
-		
-		
-}
+
+	}
 }

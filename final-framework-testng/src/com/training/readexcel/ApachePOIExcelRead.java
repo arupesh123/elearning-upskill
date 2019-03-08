@@ -31,7 +31,7 @@ public class ApachePOIExcelRead {
 			XSSFWorkbook workbook = new XSSFWorkbook(file);
 
 			// Get first/desired sheet from the workbook
-			XSSFSheet sheet = workbook.getSheetAt(0);
+			XSSFSheet sheet = workbook.getSheetAt(1);
 			
 			int rowTotal = sheet.getLastRowNum();
 
@@ -66,6 +66,13 @@ public class ApachePOIExcelRead {
 							tempList1[cellCount] = ((Double) cell.getNumericCellValue()).toString(); 
 						} 
 						break;
+						
+                     case Cell.CELL_TYPE_BLANK:
+						
+						if(((Double) cell.getNumericCellValue()).toString().equals("")){
+							tempList1[cellCount] = ((Double) cell.getNumericCellValue()).toString(); 
+						} 
+						break;
 					case Cell.CELL_TYPE_STRING:
 						if(cell.getStringCellValue()!=null){
 							tempList1[cellCount] =cell.getStringCellValue();
@@ -84,13 +91,12 @@ public class ApachePOIExcelRead {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
+;
 		return list1;
 	}
 
 	public static void main(String[] args) {
-		String fileName = "C:/Users/Naveen/Desktop/Testing.xlsx";
-		
+		String fileName = "C:\\IBM_Selenium WD\\ELTD\\ELTD_Excel_Data.xlsx";
 		for(String [] temp : new ApachePOIExcelRead().getExcelContent(fileName)){
 			for(String  tt : temp){
 				System.out.println(tt);

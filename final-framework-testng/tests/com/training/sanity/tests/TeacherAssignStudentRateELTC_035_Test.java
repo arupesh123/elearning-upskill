@@ -3,6 +3,7 @@ package com.training.sanity.tests;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -34,8 +35,12 @@ public class TeacherAssignStudentRateELTC_035_Test {
 	private TeacherAssignStudentRateELTC_035 studentandrate;
 	private static Properties properties;
 	private ScreenShot_ELTC_001 screenShot;
+	
+	//TO verify whether application allows teacher to review the assignment submitted by the student & rate
+	
 
-	@BeforeClass
+	@BeforeClass	
+	//Opens the browser
 	public void setUpBeforeClass() throws IOException {
 		properties = new Properties();
 		FileInputStream inStream = new FileInputStream("./resources/others.properties");
@@ -50,53 +55,60 @@ public class TeacherAssignStudentRateELTC_035_Test {
 	}
 
 	@AfterClass
+	//closes the browser
 	public void tearDown() throws Exception {
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 		driver.quit();
 	}
 
 	@Test(priority = 1)
+	//This test will run first
 	public void validLoginTest() throws InterruptedException {
 
 		StudentLoginELTC_002.sendUserName("sourik54");
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 		StudentLoginELTC_002.sendPassword("Systane@12");
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 		StudentLoginELTC_002.clickLoginBtn();
 
 	}
 
 	@Test(priority = 2)
-
+	//This test will run second
 	public void validCoursecreation() throws InterruptedException {
 
+		//Click on Course link
 		studentandrate.clickCourse();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Click on Assignments link
 		studentandrate.clickAssignments1();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Click on Assisgnments
 		studentandrate.clickAssignSub1();
-		Thread.sleep(1000);
-
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+       //capture screenshot
 		screenShot.captureScreenShot("ELTC_035_hands on exercise");
-
+       //Click on Correction Rate
 		studentandrate.clickCorrectnRate1();
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Click on Send Score
 		studentandrate.sendScore1("50");
-		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Click on button
 		studentandrate.clickbutton1();
-		Thread.sleep(1000);
-		
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Check for assertions
 		studentandrate.ClickAssertion1();
-		Thread.sleep(1000);
-
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+        //capture screenshots
 		screenShot.captureScreenShot("ELTC_035_UpdateMessage");
-
+       //Click on Name Assignmnet link
 		studentandrate.clicknameAssignLink1();
-		Thread.sleep(1000);
-				
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		//Click on click on Assertion rev		
 		studentandrate.ClickAssertionRev();
-		Thread.sleep(1000);
-
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+        //Capture the screenshot
 		screenShot.captureScreenShot("ELTC_035_Revised");
 
 	}

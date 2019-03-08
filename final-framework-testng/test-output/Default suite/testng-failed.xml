@@ -3,13 +3,16 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.training.sanity.tests.TeacherAssignStudentRateELTC_035_Test">
+      <class name="com.training.regression.tests.TeacherCourse_Student_Register_ELTC_064_Test">
         <methods>
+          <include name="TracherCoursecreation1"/>
+          <include name="validLoginTeacherTest"/>
           <include name="tearDown"/>
+          <include name="AdminloginView"/>
           <include name="setUpBeforeClass"/>
-          <include name="validCoursecreation"/>
+          <include name="StudentCourseRegister"/>
         </methods>
-      </class> <!-- com.training.sanity.tests.TeacherAssignStudentRateELTC_035_Test -->
+      </class> <!-- com.training.regression.tests.TeacherCourse_Student_Register_ELTC_064_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

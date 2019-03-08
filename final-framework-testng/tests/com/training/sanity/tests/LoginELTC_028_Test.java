@@ -45,40 +45,47 @@ public class LoginELTC_028_Test {
 		driver.get(baseUrl);
 	}
 
-	//@AfterMethod
-//	public void tearDown() throws Exception {
-		//Thread.sleep(1000);
-		//driver.quit();
-	//}
+	@AfterMethod
+	public void tearDown() throws Exception {
+		Thread.sleep(1000);
+	driver.quit();
+	}
 
 	@Test
 	public void validLoginTest() throws InterruptedException {
-
-		
+        
+		// Calling the 028_test for username 
 		LoginELTC_028_Test.sendUserName("admin");
 		Thread.sleep(1000);
+		// Calling the 028_test for passowrd
 		LoginELTC_028_Test.sendPassword("admin@123");
 		Thread.sleep(1000);
+		// Calling the 028_test for click on login button
 		LoginELTC_028_Test.clickbtn_Login();
 		Thread.sleep(1000);
+		// Calling the 028_test for uclcik classes 
 		LoginELTC_028_Test.clickClasses();
 		Thread.sleep(1000);
+		// Calling the 028_test for click sub class to course
 		LoginELTC_028_Test.clickSubClassToCourse();
 		Thread.sleep(1000);
+		// Calling the 028_test for click on AAAA
 		LoginELTC_028_Test.clickAAAAA();
 		Thread.sleep(1000);
+		// Calling the 028_test for click arrow row
 		LoginELTC_028_Test.clickArrow();
 		Thread.sleep(1000);
+		// Calling the 028_test for click button subscribe
 		LoginELTC_028_Test.clickbtn_Subscribeclasstocourses();
 		Thread.sleep(1000);
 
-		
+		//Checking for assetion 
 		String Expected0 = "Update successful";
 		String Actualtext0 = driver.findElement(By.xpath("//*[@id=\"content-section\"]/div/div[2]")).getText();
 		Assert.assertEquals(Actualtext0,Expected0);
 		System.out.println(Actualtext0);
 		
-		
+		//this is for screenshot capture
 		screenShot.captureScreenShot("ELTC_028");
 
 	}
